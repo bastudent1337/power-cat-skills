@@ -14,7 +14,7 @@ A plugin for **Claude Code** and **GitHub Copilot** that provides specialized sk
 
 ## Prerequisites
 
-- [Power-Platform-skills](https://github.com/microsoft/power-cat-skills) installed (Recomended)
+- [Power-Platform-skills](https://github.com/microsoft/power-platform-skills) installed (Recomended)
 - A valid Power Apps environment with appropriate licenses
 - Claude Code or GitHub Copilot with plugin support
 
