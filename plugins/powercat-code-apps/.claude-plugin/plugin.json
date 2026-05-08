@@ -1,0 +1,19 @@
+{
+  "name": "powercat-code-apps",
+  "version": "1.0.0",
+  "description": "Claude skills to generate brand-aligned design guides for code apps built on the Power Platform.",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://www.microsoft.com"
+  },
+  "homepage": "https://github.com/microsoft/power-cat-skills/",
+  "repository": "https://github.com/microsoft/power-cat-skills/",
+  "license": "MIT",
+  "keywords": [
+    "code-apps",
+    "power-apps",
+    "design-guide",
+    "brand",
+    "power-platform"
+  ]
+}
