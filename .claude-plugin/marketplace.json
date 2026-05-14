@@ -24,6 +24,22 @@
          "infopath", "dataverse", "performance",
          "microsoft power platform", "microsoft"
        ]
+     },
+     {
+       "name": "powercat-code-apps",
+       "description": "Skills to generate brand-aligned design guides for code apps built on the Power Platform.",
+       "source": "./plugins/powercat-code-apps",
+       "skills": [
+         "./plugins/powercat-code-apps/skills/design-guide"
+       ],
+       "version": "1.0.0",
+       "repository": "https://github.com/microsoft/power-cat-skills",
+       "license": "MIT",
+       "category": "development",
+       "tags": [
+         "code apps", "power platform", "power apps",
+         "design guide", "brand", "microsoft"
+       ]
      }
   ]
 }
