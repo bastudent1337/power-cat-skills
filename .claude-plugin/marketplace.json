@@ -106,6 +106,22 @@
         "eval", "testing", "code apps", "generative pages",
         "security", "power platform", "power apps", "microsoft"
       ]
+    },
+    {
+      "name": "powercat-admin-digest",
+      "description": "Power Platform admin digest — Message Center notices, Service Health incidents, Known Issues, and deprecations that can affect production operations, with shareability tiering so customer-facing summaries never leak NDA content.",
+      "source": "./plugins/powercat-admin-digest",
+      "skills": [
+        "./plugins/powercat-admin-digest/skills/powercat-admin-digest"
+      ],
+      "version": "1.0.0",
+      "repository": "https://github.com/microsoft/power-cat-skills",
+      "license": "MIT",
+      "category": "development",
+      "tags": [
+        "admin", "message center", "service health",
+        "deprecations", "power platform", "powercat", "microsoft"
+      ]
     }
   ]
 }
