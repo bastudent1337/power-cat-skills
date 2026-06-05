@@ -1,6 +1,6 @@
 # powercat-overflow
-<img width="2036" height="1080" alt="image" src="https://github.com/user-attachments/assets/f64d8106-04bb-4efa-a919-55c847689b33" />
-<img width="2036" height="1080" alt="image" src="https://github.com/user-attachments/assets/7cc668ce-fd96-4019-a6a5-031c59f4cc96" />
+<img width="2036" height="1080" alt="image" src="https://github.com/user-attachments/assets/a0ef4ffd-2505-465b-94a7-38e1b9f93812" />
+<img width="2036" height="1080" alt="image" src="https://github.com/user-attachments/assets/b19bf17e-a022-43f5-b192-575601b1caca" />
 
 Reviews every Power Automate cloud flow inside a Power Platform solution (`.zip`) against Microsoft''s coding guidelines and produces a `[SolutionName].findings.json` next to the uploaded solution. Then opens the hosted PowerCAT-Overflow viewer at <https://microsoft.github.io/power-cat-skills/PowerCAT-Overflow.html> and uploads both files so the user can explore the results.
 
