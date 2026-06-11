@@ -2,7 +2,7 @@
 <img width="2036" height="1080" alt="image" src="https://github.com/user-attachments/assets/a0ef4ffd-2505-465b-94a7-38e1b9f93812" />
 <img width="2036" height="1080" alt="image" src="https://github.com/user-attachments/assets/b19bf17e-a022-43f5-b192-575601b1caca" />
 
-Reviews every Power Automate cloud flow inside a Power Platform solution (`.zip`) against Microsoft''s coding guidelines and produces a `[SolutionName].findings.json` next to the uploaded solution. Then opens the hosted PowerCAT-Overflow viewer at <https://microsoft.github.io/power-cat-skills/PowerCAT-Overflow.html> and uploads both files so the user can explore the results.
+Reviews every Power Automate cloud flow inside a Power Platform solution (`.zip`) against Microsoft's coding guidelines and produces a `[SolutionName].findings.json` next to the uploaded solution. Then opens the hosted PowerCAT-Overflow viewer at <https://microsoft.github.io/power-cat-skills/PowerCAT-Overflow.html> and uploads both files so the user can explore the results.
 
 **Explore it now!**
 1. [Download Sample Solution](https://github.com/microsoft/power-cat-skills/blob/main/Common/PowerCAT%20OverFlow/StressTest100Flows_1_0_0_0.zip)
@@ -11,7 +11,7 @@ Reviews every Power Automate cloud flow inside a Power Platform solution (`.zip`
 
 ## Skills
 
-- **powercat-overflow** — Reviews every Power Automate cloud flow inside a Power Platform solution `.zip` against Microsoft''s coding guidelines, writes a single solution-level findings JSON next to the uploaded solution, then opens the hosted PowerCAT-Overflow viewer with both files loaded.
+- **powercat-overflow** — Reviews every Power Automate cloud flow inside a Power Platform solution `.zip` against Microsoft's coding guidelines, writes a single solution-level findings JSON next to the uploaded solution, then opens the hosted PowerCAT-Overflow viewer with both files loaded.
 
 ## Usage
 
