@@ -50,7 +50,7 @@ A plugin marketplace for **Claude Code** and **GitHub Copilot** that provides sp
 
 | Skill | Description |
 |-------|-------------|
-| **powercat-admin-digest** | Produce a Power Platform admin digest — Message Center notices, Service Health incidents, Known Issues, and deprecations — with shareability tiering so customer-facing summaries never leak NDA content |
+| **powercat-admin-digest** | Produce a Power Platform admin digest — Message Center notices, Service Health incidents, Known Issues, and deprecations. |
 
 ### `powercat-overflow` — Overflow
 
