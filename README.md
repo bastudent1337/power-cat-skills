@@ -81,9 +81,10 @@ Both Microsoft Scout and GitHub Copilot CLI use GitHub Copilot CLI to register m
 Ask Scout to install the marketplaces and the plugins you want. For example:
 
 ```text
-Use GitHub Copilot CLI to add the microsoft/power-platform-skills and
-microsoft/power-cat-skills plugin marketplaces. Install
-canvas-apps@power-platform-skills and
+Add the microsoft/power-platform-skills and
+microsoft/power-cat-skills plugin marketplaces.
+
+Install canvas-apps@power-platform-skills and
 powercat-canvas-apps@power-cat-skills.
 ```
 
