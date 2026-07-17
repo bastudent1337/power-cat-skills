@@ -2,7 +2,7 @@
 
 > Power Platform development extensions curated by Microsoft Power CAT (Customer Advisory Team)
 
-A plugin marketplace for **Claude Code** and **GitHub Copilot** that provides specialized skills for Power Platform development — from Canvas App authoring to Dataverse query crafting, environment governance, and customer storytelling.
+A plugin marketplace for **Microsoft Scout** and **GitHub Copilot CLI** that provides specialized skills for Power Platform development — from Canvas App authoring to Dataverse query crafting, environment governance, and customer storytelling.
 
 ## Plugins & Skills
 
@@ -66,123 +66,143 @@ A plugin marketplace for **Claude Code** and **GitHub Copilot** that provides sp
 
 ## Prerequisites
 
-- [Power-Platform-skills](https://github.com/microsoft/power-platform-skills) installed (Recomended)
+- [GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli) installed and authenticated
+- [Microsoft Scout](https://learn.microsoft.com/en-us/microsoft-scout/get-started) installed and configured if you plan to use these skills in Scout
+- Access to the [Power Platform Skills](https://github.com/microsoft/power-platform-skills) marketplace (recommended because some workflows use its foundational skills)
 - A valid Power Apps environment with appropriate licenses
-- Claude Code or GitHub Copilot with plugin support
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) if you plan to use Canvas App skills
 
 ## Getting Started
 
-### Install the Plugin
+Both Microsoft Scout and GitHub Copilot CLI use GitHub Copilot CLI to register marketplaces and install plugins.
 
-Run these commands inside a Claude Code or GitHub Copilot CLI session:
+### Microsoft Scout
 
-1. Add the Power-Platform-Skills marketplace (Requirement)
+Ask Scout to install the marketplaces and the plugins you want. For example:
+
+```text
+Use GitHub Copilot CLI to add the microsoft/power-platform-skills and
+microsoft/power-cat-skills plugin marketplaces. Install
+canvas-apps@power-platform-skills and
+powercat-canvas-apps@power-cat-skills.
+```
+
+Scout runs the required terminal commands through its shell. After installation, start a new Scout conversation so it discovers the newly installed skills.
+
+To install a different Power CAT plugin, replace `powercat-canvas-apps` with one of the plugin names listed in [Available Power CAT plugins](#available-power-cat-plugins).
+
+> [!NOTE]
+> Microsoft Scout is currently a preview feature. It requires access to the [Frontier preview program](https://adoption.microsoft.com/en-us/copilot/frontier-program/), Microsoft 365 Copilot, and GitHub Copilot Business or Enterprise. See [Get started with Microsoft Scout](https://learn.microsoft.com/en-us/microsoft-scout/get-started).
+
+### GitHub Copilot CLI
+
+Run these commands in a terminal:
 
 ```bash
+# Register the marketplaces
+copilot plugin marketplace add microsoft/power-platform-skills
+copilot plugin marketplace add microsoft/power-cat-skills
+
+# Canvas Apps example: install the companion foundation plugin first
+copilot plugin install canvas-apps@power-platform-skills
+copilot plugin install powercat-canvas-apps@power-cat-skills
+```
+
+If you are already inside an interactive Copilot CLI session, use the equivalent slash commands:
+
+```text
 /plugin marketplace add microsoft/power-platform-skills
+/plugin install canvas-apps@power-platform-skills
+/plugin marketplace add microsoft/power-cat-skills
+/plugin install powercat-canvas-apps@power-cat-skills
 ```
 
-2. Install the desired plugin
+See [Finding and installing plugins for GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-finding-installing) for marketplace and plugin management commands.
 
-    ```bash
-    /plugin install canvas-apps@power-platform-skills    
-    ```
-3. Add the Power CAT Skills marketplace
+### Available Power CAT plugins
+
+Install any combination of these plugins. Install the companion foundation plugin first where one is listed.
+
+| Power CAT plugin | Companion foundation plugin |
+|------------------|-----------------------------|
+| `powercat-adoption` | — |
+| `powercat-canvas-apps` | `canvas-apps@power-platform-skills` |
+| `powercat-code-apps` | `code-apps-preview@power-platform-skills` |
+| `powercat-dataverse` | — |
+| `powercat-governance` | — |
+| `powercat-procode-eval` | — |
+| `powercat-admin-digest` | — |
+| `powercat-overflow` | — |
+| `powercat-overpage` | — |
 
 ```bash
-/plugin marketplace add microsoft/power-cat-skills
+copilot plugin install powercat-adoption@power-cat-skills
+copilot plugin install powercat-canvas-apps@power-cat-skills
+copilot plugin install powercat-code-apps@power-cat-skills
+copilot plugin install powercat-dataverse@power-cat-skills
+copilot plugin install powercat-governance@power-cat-skills
+copilot plugin install powercat-procode-eval@power-cat-skills
+copilot plugin install powercat-admin-digest@power-cat-skills
+copilot plugin install powercat-overflow@power-cat-skills
+copilot plugin install powercat-overpage@power-cat-skills
 ```
-
-4. Install the desired plugin — choose one or more:
-
-    ```bash
-    /plugin install powercat-adoption@power-cat-skills
-    /plugin install powercat-canvas-apps@power-cat-skills
-    /plugin install powercat-code-apps@power-cat-skills
-    /plugin install powercat-dataverse@power-cat-skills
-    /plugin install powercat-governance@power-cat-skills
-    /plugin install powercat-procode-eval@power-cat-skills
-    /plugin install powercat-admin-digest@power-cat-skills
-    /plugin install powercat-overflow@power-cat-skills
-    /plugin install powercat-overpage@power-cat-skills
-    ```
 
 ### Configure the MCP Server
 
-Run the **configure-canvas-mcp** skill to set up the Canvas Authoring MCP server:
+If you use Canvas App skills, ask Scout or Copilot CLI to run the **configure-canvas-mcp** skill and set up the Canvas Authoring MCP server:
 
-```
+```text
 Configure the Canvas MCP server for my environment
 ```
 
 ### Start Using
 
-Once configured, invoke any skill by describing what you want:
+Start a new Scout or Copilot CLI conversation, then invoke a skill by describing what you want:
 
-```
+```text
 Convert my InfoPath to Canvas Apps
 ```
 
-```
+```text
 Analyze my Canvas Apps for performance issues
 ```
 
-```
+```text
 Migrate my SharePoint data sources to Dataverse
 ```
 
-```
+```text
 Write a Dataverse Web API query that returns the top 10 active accounts in Sydney
 ```
 
-```
+```text
 Create a dev environment for adelev@contoso.com
 ```
 
-```
+```text
 Create a customer story deck for Contoso
 ```
 
-## Running Without Interruption
+## Permissions and Approvals
 
 Plugins in this repo may invoke multiple tools (file edits, shell commands, MCP servers) during a session, which can result in frequent approval prompts. Use the options below to reduce or eliminate these interruptions.
 
 > **Warning**: Auto-approval options give the agent the same access you have on your machine. Only use these in trusted or sandboxed environments.
 
-### Claude Code
+### Microsoft Scout
 
-#### Option 1 — Permission mode (recommended)
+Scout prompts before running sensitive actions by default. To reduce repeated prompts while preserving control:
 
-Set the `acceptEdits` mode to auto-approve file edits while still prompting for shell commands:
+1. Open **Settings** > **Permissions**.
+2. Keep auto-approval limited to the capabilities and commands required by your workflow.
+3. Add narrowly scoped shell patterns such as `pac *` or `npm run *` to the allow list when appropriate.
+4. Review each request before choosing **Always allow**.
 
-```jsonc
-// .claude/settings.json (project-level) or ~/.claude/settings.json (user-level)
-{
-  "defaultMode": "acceptEdits",
-  "permissions": {
-    "allow": [
-      "Bash(npm run *)",
-      "Bash(git *)",
-      "Bash(pac *)"
-      // add other commands your workflow needs
-    ]
-  }
-}
-```
-
-#### Option 2 — Allow all tools
-
-Press <kbd>Shift</kbd>+<kbd>Tab</kbd> during a session to cycle to **auto-accept** mode, or launch with:
-
-```bash
-claude --dangerously-skip-permissions
-```
-
-See the [Claude Code permissions docs](https://code.claude.com/docs/en/permissions) for the full reference.
+See [Customize shell permissions in Microsoft Scout](https://learn.microsoft.com/en-us/microsoft-scout/use-microsoft-scout#customize-shell-permissions).
 
 ### GitHub Copilot CLI
 
-#### Option 1 — Allow specific tools (recommended)
+#### Allow specific tools (recommended)
 
 Pre-approve only the tools your workflow needs:
 
@@ -190,7 +210,7 @@ Pre-approve only the tools your workflow needs:
 copilot --allow-tool 'write' --allow-tool 'shell(npm run build)' --allow-tool 'shell(pac *)'
 ```
 
-#### Option 2 — Allow all tools in Copilot
+#### Allow all tools
 
 ```bash
 copilot --allow-all-tools
@@ -202,37 +222,28 @@ To allow everything except dangerous commands:
 copilot --allow-all-tools --deny-tool 'shell(rm)' --deny-tool 'shell(git push)'
 ```
 
-See the [Copilot CLI docs](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-copilot-cli) for the full reference.
-
+See [Allowing and denying tools in GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools) for the full reference.
 
 ## Project Structure
 
 ```
 power-cat-skills/
 ├── .claude-plugin/
-│   └── marketplace.json      # Marketplace manifest
-├── plugins/
-│   ├── powercat-adoption/
-│   │   └── skills/
-│   │       └── powercat-storytelling/
-│   ├── powercat-canvas-apps/
-│   │   └── skills/
-│   │       ├── analyze-canvas-performance/
-│   │       ├── infopath-to-canvas/
-│   │       └── migrate-to-dataverse/
-│   ├── powercat-dataverse/
-│   │   └── skills/
-│   │       └── dataverse-webapi-query/
-│   └── powercat-governance/
-│       └── skills/
-│           └── create-pp-dev-env/
+│   └── marketplace.json      # Marketplace manifest recognized by Copilot CLI
+├── plugins/                  # Individual Power CAT plugins
+│   └── <plugin-name>/
+│       └── skills/           # Skills included in the plugin
 ├── shared/
 │   └── skills/               # Cross-plugin shared skill definitions
 └── README.md
 ```
+
 ## References
 
 - [Power CAT](https://microsoft.github.io/powercat/)
+- [Microsoft Scout](https://learn.microsoft.com/en-us/microsoft-scout/overview)
+- [GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview)
+- [GitHub Copilot CLI plugins](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-finding-installing)
 
 ## License
 
